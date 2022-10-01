@@ -28,7 +28,7 @@ php artisan stub:publish
 
 php artisan make:resource ArticleResource
 
-Note: Is use to formatter the resource with the structure api:json without the controller.
+Note: Is use to formatter the resource with the structure api:json out of the controller.
 
 ## Api Prefix
 
