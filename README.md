@@ -39,3 +39,20 @@ This is changed in the RouteServiceProvider.
 php artisan make:resource ArticleCollection
 
 note: When using resources of type "resource and collection" there is a convention when creating them. You must use the singular name in the 2 files to form a relationship so you can use the $this->collection to call the "resource" in the "collection". In the case that these names are different, a $collects will be added.
+
+## Header validation Json:api
+
+(Request): GET | POST | PATCH | DELETE
+sent: accept application/vnd.api+json
+Or get: 406 Not Acceptable
+
+In POST | PATCH | DELETE
+Add: content-type application/vnd.api+json
+Or get: 415 Unsupported Media Type
+
+(Responses)
+content-type application/vnd.api+json
+
+
+
+
