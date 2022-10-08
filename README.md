@@ -33,3 +33,9 @@ Note: Is use to formatter the resource with the structure api:json out of the co
 ## Api Prefix
 
 This is changed in the RouteServiceProvider.
+
+## Create a ResourceCollection with:
+
+php artisan make:resource ArticleCollection
+
+note: When using resources of type "resource and collection" there is a convention when creating them. You must use the singular name in the 2 files to form a relationship so you can use the $this->collection to call the "resource" in the "collection". In the case that these names are different, a $collects will be added.
