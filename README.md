@@ -55,3 +55,7 @@ Or get: 415 Unsupported Media Type
 
 (Responses)
 content-type application/vnd.api+json
+
+## Testing Helpers
+
+First I created the trait to add the headers in the test requests and use them in the testCase. this prevented errors in the json call request in the tests.
