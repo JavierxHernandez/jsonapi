@@ -42,6 +42,9 @@ note: When using resources of type "resource and collection" there is a conventi
 
 ## Header validation Json:api
 
+php artisan make:middleware ValidateJsonApiHeaders
+Note: The middleware for routes is configured in the App Kernel.
+
 (Request): GET | POST | PATCH | DELETE
 sent: accept application/vnd.api+json
 Or get: 406 Not Acceptable
@@ -52,7 +55,3 @@ Or get: 415 Unsupported Media Type
 
 (Responses)
 content-type application/vnd.api+json
-
-
-
-
