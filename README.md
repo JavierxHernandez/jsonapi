@@ -59,3 +59,15 @@ content-type application/vnd.api+json
 ## Testing Helpers
 
 First I created the trait to add the headers in the test requests and use them in the testCase. this prevented errors in the json call request in the tests.
+
+## Json api validation error response
+
+"errors": {
+    "title": "Invalid data",
+    "detail": "Title is required",
+    "source": [
+        "pointer": "/data/attributes/title"
+    ]
+}
+
+## Quede en el 12
