@@ -55,22 +55,17 @@ class Handler extends ExceptionHandler
 //        dd($exception->getMessage());
         $title = $exception->getMessage();
 
-        $errors = [];
-
-        foreach($exception->errors() as $field => $message){
-            $pointer = "/".str_replace('.', '/', $field);
-
-            $errors[] = [
-                'title' => $title,
-                'detail' => $message[0],
-                'source' => [
-                    'pointer' => $pointer
-                ]
-            ];
-        }
-
         return response()->json([
-            'errors' => $errors
+            'errors' => collect($exception->errors())
+            ->map(function ($messages, $field) use ($title){
+                return [
+                    'title' => $title,
+                    'detail' => $messages[0],
+                    'source' => [
+                        'pointer' => "/".str_replace('.', '/', $field)
+                    ]
+                ];
+            })->values()
         ], 422);
     }
 }

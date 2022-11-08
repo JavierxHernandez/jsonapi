@@ -70,4 +70,10 @@ First I created the trait to add the headers in the test requests and use them i
     ]
 }
 
-## Quede en el 12
+## Testing response helpers
+
+The good practice for adding macros is to create a new service provider and implement in the boot method inside it.
+
+php artisan make:provider JsonApiServiceProvider
+
+and configure the new provider inside config/app.php in the providers section.
