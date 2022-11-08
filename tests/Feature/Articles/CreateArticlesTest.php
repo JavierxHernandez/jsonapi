@@ -17,7 +17,7 @@ class CreateArticlesTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $response = $this->postJson(route('api.v1.articles.create'), [
+        $response = $this->postJson(route('api.v1.articles.store'), [
             'data' => [
                 'type' => 'articles',
                 'attributes' => [
@@ -57,7 +57,7 @@ class CreateArticlesTest extends TestCase
     {
         // $this->withoutExceptionHandling();
 
-        $response = $this->postJson(route('api.v1.articles.create'), [
+        $response = $this->postJson(route('api.v1.articles.store'), [
             'data' => [
                 'type' => 'articles',
                 'attributes' => [
@@ -75,7 +75,7 @@ class CreateArticlesTest extends TestCase
     {
         // $this->withoutExceptionHandling();
 
-        $response = $this->postJson(route('api.v1.articles.create'), [
+        $response = $this->postJson(route('api.v1.articles.store'), [
             'data' => [
                 'type' => 'articles',
                 'attributes' => [
@@ -94,7 +94,7 @@ class CreateArticlesTest extends TestCase
     {
         // $this->withoutExceptionHandling();
 
-        $response = $this->postJson(route('api.v1.articles.create'), [
+        $response = $this->postJson(route('api.v1.articles.store'), [
             'data' => [
                 'type' => 'articles',
                 'attributes' => [
@@ -112,7 +112,7 @@ class CreateArticlesTest extends TestCase
     {
         // $this->withoutExceptionHandling();
 
-        $response = $this->postJson(route('api.v1.articles.create'), [
+        $response = $this->postJson(route('api.v1.articles.store'), [
             'data' => [
                 'type' => 'articles',
                 'attributes' => [

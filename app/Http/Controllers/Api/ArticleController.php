@@ -21,7 +21,7 @@ class ArticleController extends Controller
         return ArticleCollection::make(Article::all());
     }
 
-    public function create(Request $request): ArticleResource
+    public function store(Request $request): ArticleResource
     {
 
         $request->validate([
