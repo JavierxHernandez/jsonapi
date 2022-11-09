@@ -15,7 +15,7 @@ class CreateArticlesTest extends TestCase
     /** @test */
     public function test_can_create_articles()
     {
-        $this->withoutExceptionHandling();
+//        $this->withoutExceptionHandling();
 
         $response = $this->postJson(route('api.v1.articles.store'), [
             'data' => [
@@ -84,7 +84,7 @@ class CreateArticlesTest extends TestCase
                     'content' => 'Contenido del articulo'
                 ]
             ]
-        ])->dump();
+        ]);
 
         $response->assertJsonApiValidationErrors('title');
 

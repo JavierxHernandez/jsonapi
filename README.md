@@ -77,3 +77,5 @@ The good practice for adding macros is to create a new service provider and impl
 php artisan make:provider JsonApiServiceProvider
 
 and configure the new provider inside config/app.php in the providers section.
+
+## Validating JSON:API Document
