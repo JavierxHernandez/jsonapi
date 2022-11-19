@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Http\Responses\JsonApiValidationErrorResponse;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
@@ -50,24 +51,8 @@ class Handler extends ExceptionHandler
         });
     }
 
-    protected function invalidJson($request, ValidationException $exception): JsonResponse
+    protected function invalidJson($request, ValidationException $exception): JsonApiValidationErrorResponse
     {
-//        dd($exception->getMessage());
-        $title = $exception->getMessage();
-
-        return response()->json([
-            'errors' => collect($exception->errors())
-            ->map(function ($messages, $field) use ($title){
-                return [
-                    'title' => $title,
-                    'detail' => $messages[0],
-                    'source' => [
-                        'pointer' => "/".str_replace('.', '/', $field)
-                    ]
-                ];
-            })->values()
-        ], 422, [
-            'content-type' => 'application/vnd.api+json'
-        ]);
+        return new JsonApiValidationErrorResponse($exception);
     }
 }

@@ -79,3 +79,5 @@ php artisan make:provider JsonApiServiceProvider
 and configure the new provider inside config/app.php in the providers section.
 
 ## Validating JSON:API Document
+
+## Custom error response
